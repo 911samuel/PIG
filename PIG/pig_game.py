@@ -1,10 +1,13 @@
 import random
 
-def roll():
+
+def roll_die():
+    """Simulates rolling a six-sided die and returns the result (1-6)."""
     min_value = 1
     max_value = 6
     roll = random.randint(min_value, max_value)
     return roll
+
 
 while True:
     players = input("Enter the number of players (2 - 4): ")
@@ -30,7 +33,7 @@ while max(player_scores) < max_score:
             if should_roll != "y":
                 break
 
-            value = roll()
+            value = roll_die()
             if value == 1:
                 print("You rolled a 1! Turn done!")
                 current_score = 0
